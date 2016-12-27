@@ -50,7 +50,7 @@ class GroupsController < ApplicationController
     params.require(:group).permit(:title, :description)
   end
 
-  def find_group_and_check_permissoon
+  def find_group_and_check_permission
     @group = Group.find(params[:id])
 
     if current_user != @group.user
